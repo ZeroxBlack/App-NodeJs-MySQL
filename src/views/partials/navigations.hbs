@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-transparent">
+  <div class="container">
+      <a class="navbar-brand" href="/">Notes App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          {{!-- To show some links or buttons when the user logs in --}}
+          {{#if user}}
+            <li class="nav-item">
+                <a href="/" class="nav-link fa fa-home"></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fa fa-file-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Notes
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item fa fa-tasks" href="/links"> All Notes</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item fa fa-plus" href="/links/add"> Add a Note</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="/profile" class="nav-link fa fa-user"> Profile</a>
+            </li>
+            <li class="nav-item">
+              <a href="/logout" class="nav-link fa fa-sign-out" aria-hidden="true"> Logout</a>
+            </li>
+            {{else}}
+              <li class="nav-item">
+                <a href="/" class="nav-link fa fa-home"></a>
+              </li>
+              <li class="nav-item">
+                <a href="/signin" class="nav-link fa fa-sign-in"> SignIn</a>
+              </li>
+              <li class="nav-item">
+                <a href="/signup" class="nav-link fa fa-user-plus"> SignUp</a>
+              </li>
+          {{/if}}
+        </ul>
+      </div>
+  </div>
+</nav>
